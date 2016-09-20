@@ -1,0 +1,19 @@
+{
+  "name": "fis-prepackager-addvmrequire",
+  "version": "1.0.0",
+  "description": "把vm文�模版文件的依赖的资源都添加到该vm文件的依赖列表中.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/winnieBear/fis-prepackager-addvmrequire.git"
+  },
+  "author": "fengyang321@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/winnieBear/fis-prepackager-addvmrequire/issues"
+  },
+  "homepage": "https://github.com/winnieBear/fis-prepackager-addvmrequire#readme"
+}
