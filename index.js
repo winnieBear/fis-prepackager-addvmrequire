@@ -2,6 +2,10 @@ module.exports = function(ret, conf, settings, opt) {
 
     fis.util.map(ret.src, function(subpath, file) {
         if (file.ext !== '.vm') {
+            // 添加同名依赖
+            // if (file.isJsLike) {
+            //   file.addSameNameRequire('.css');
+            // }
             return;
         }
         var content = file.getContent();
@@ -26,6 +30,12 @@ module.exports = function(ret, conf, settings, opt) {
             return m;
         };
         content.replace(reg, callback);
+        
+        // 添加vm文件同名依赖,把组件的css和js添加到依赖列表中
+        // console.log('***%s',file.id)
+        file.addSameNameRequire('.js');
+        file.addSameNameRequire('.css');
+      
         //update ret.map
         if (file.requires && file.requires.length) {
             ret.map.res[file.id].deps = file.requires;
