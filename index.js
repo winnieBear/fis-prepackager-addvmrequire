@@ -6,6 +6,10 @@ module.exports = function (ret, conf, settings, opt) {
       if (file.isJsLike) {
         // js文件添加同名依赖
         file.addSameNameRequire('.css');
+        //update ret.map
+        if (file.requires && file.requires.length) {
+          ret.map.res[ file.id ].deps = file.requires;
+        }
       }
 
       return;
